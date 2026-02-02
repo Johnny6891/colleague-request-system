@@ -1,0 +1,98 @@
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.list-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 var(--space-sm);
+    background: var(--morandi-gray-blue);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.count.completed {
+    background: var(--morandi-sage);
+}
+
+.list-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.list-content>* {
+    width: 100%;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--space-xl);
+    font-size: 0.9rem;
+}
+
+/* 多選模式控制列 */
+.select-controls {
+    margin-bottom: var(--space-lg);
+}
+
+.select-mode-btn {
+    font-size: 0.9rem;
+}
+
+.select-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.selected-count {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: var(--space-md);
+}
+
+.glass-button-danger {
+    background: rgba(220, 53, 69, 0.25);
+    border-color: rgba(220, 53, 69, 0.4);
+}
+
+.glass-button-danger:hover:not(:disabled) {
+    background: rgba(220, 53, 69, 0.4);
+}
+
+.glass-button-danger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

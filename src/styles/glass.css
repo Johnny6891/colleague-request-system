@@ -1,0 +1,175 @@
+/* ================================================
+   Liquid Glass 效果樣式
+   ================================================ */
+
+/* 基礎玻璃效果 */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* 玻璃卡片 */
+.glass-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* 玻璃面板 */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* 玻璃按鈕 */
+.glass-button {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-button:active {
+    transform: translateY(0);
+}
+
+/* 主要按鈕 */
+.glass-button-primary {
+    background: linear-gradient(135deg,
+            rgba(141, 161, 180, 0.7) 0%,
+            rgba(141, 161, 180, 0.5) 100%);
+    color: var(--text-on-accent);
+    border: 1px solid rgba(141, 161, 180, 0.5);
+}
+
+.glass-button-primary:hover {
+    background: linear-gradient(135deg,
+            rgba(141, 161, 180, 0.85) 0%,
+            rgba(141, 161, 180, 0.65) 100%);
+}
+
+/* 成功按鈕 */
+.glass-button-success {
+    background: linear-gradient(135deg,
+            rgba(156, 175, 136, 0.7) 0%,
+            rgba(156, 175, 136, 0.5) 100%);
+    color: var(--text-on-accent);
+    border: 1px solid rgba(156, 175, 136, 0.5);
+}
+
+.glass-button-success:hover {
+    background: linear-gradient(135deg,
+            rgba(156, 175, 136, 0.85) 0%,
+            rgba(156, 175, 136, 0.65) 100%);
+}
+
+/* 玻璃輸入框 */
+.glass-input {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.glass-input::placeholder {
+    color: var(--text-muted);
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--morandi-gray-blue);
+    box-shadow:
+        0 0 0 3px rgba(141, 161, 180, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* 玻璃文字區域 */
+.glass-textarea {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.glass-textarea:focus {
+    outline: none;
+    border-color: var(--morandi-gray-blue);
+    box-shadow:
+        0 0 0 3px rgba(141, 161, 180, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* 拖曳中狀態 */
+.dragging {
+    opacity: 0.6;
+    transform: scale(1.02) rotate(2deg);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* 拖曳放置區域 */
+.drop-zone {
+    transition: all var(--transition-fast);
+}
+
+.drop-zone.drag-over {
+    background: rgba(141, 161, 180, 0.15);
+    border: 2px dashed var(--morandi-gray-blue);
+}

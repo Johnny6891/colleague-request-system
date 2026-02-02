@@ -1,0 +1,90 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Header ========== */
+
+.app-header {
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-lg) auto;
+  margin-bottom: 0;
+  width: calc(100% - var(--space-lg) * 2);
+  max-width: 1200px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========== Main Layout ========== */
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  padding: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    padding: var(--space-md);
+  }
+}
+
+/* ========== Header Left ========== */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.add-request-btn {
+  font-size: 0.875rem;
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* ========== Content ========== */
+
+.content {
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== States ========== */
+
+.loading-state,
+.error-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  color: var(--text-secondary);
+  width: 100%;
+}
+
+.error-state {
+  background: rgba(201, 169, 166, 0.2);
+  color: #8B6B6B;
+}

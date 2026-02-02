@@ -1,0 +1,117 @@
+.request-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    cursor: grab;
+    transition: all var(--transition-base);
+}
+
+.request-card:active {
+    cursor: grabbing;
+}
+
+.request-card.completed {
+    opacity: 0.7;
+}
+
+.request-card.completed .description {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+}
+
+.requester {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* 看板模式的統一高度卡片 */
+.request-card.compact {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.request-card.compact .description {
+    flex: 1;
+    overflow: hidden;
+}
+
+.description.truncated {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.created-at {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.complete-btn {
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.8rem;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: var(--space-xs);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* 多選模式樣式 */
+.select-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--morandi-sage);
+    cursor: pointer;
+    margin-right: var(--space-sm);
+    flex-shrink: 0;
+}
+
+.request-card.selected {
+    background: rgba(136, 176, 75, 0.2);
+    border: 2px solid var(--morandi-sage);
+    box-shadow: 0 0 0 2px rgba(136, 176, 75, 0.3);
+}
