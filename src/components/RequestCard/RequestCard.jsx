@@ -12,9 +12,10 @@ export default function RequestCard({
     isSelected = false,
     onSelect
 }) {
-    const { id, requester, description, status, createdAt } = request;
+    const { id, requester, description, status, createdAt, completedAt } = request;
 
     const formatDate = (dateStr) => {
+        if (!dateStr) return '';
         const date = new Date(dateStr);
         return date.toLocaleDateString('zh-TW', {
             month: 'short',
@@ -106,7 +107,12 @@ export default function RequestCard({
             <p className={`description ${isCompact ? 'truncated' : ''}`}>{description}</p>
 
             <div className="card-footer">
-                <span className="created-at">🕐 {formatDate(createdAt)}</span>
+                <span className="created-at">
+                    {status === 'completed' && completedAt
+                        ? `✅ ${formatDate(completedAt)}`
+                        : `🕐 ${formatDate(createdAt)}`
+                    }
+                </span>
 
                 {status !== 'completed' && !isSelectable && (
                     <button

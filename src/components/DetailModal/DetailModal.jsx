@@ -59,6 +59,11 @@ export default function DetailModal({ request, onClose }) {
 
                 <div className="detail-footer">
                     <span className="detail-date">🕐 建立於 {formatDate(request.createdAt)}</span>
+                    {request.status === 'completed' && request.completedAt && (
+                        <span className="detail-date" style={{ marginLeft: '1rem' }}>
+                            ✅ 完成於 {formatDate(request.completedAt)}
+                        </span>
+                    )}
                 </div>
             </div>
         </div>
